@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Sofía ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #fff5f7;
+            color: #4a3038;
+            font-family: Georgia, "Times New Roman", serif;
+            overflow-x: hidden;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 70px 20px;
+            position: relative;
+        }
+
+        .contenido {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            margin-bottom: 25px;
+            color: #b84c6f;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #b84c6f;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            line-height: 1.8;
+            margin: 0 auto 25px;
+            max-width: 750px;
+        }
+
+        .pequeno {
+            font-size: 1rem;
+            opacity: 0.75;
+        }
+
+        /* =========================
+           PANTALLA DE ENTRADA
+        ========================= */
+
+        #entrada {
+            background:
+                radial-gradient(circle at top, #ffe2ea, #fff5f7 60%);
+        }
+
+        .corazon-grande {
+            font-size: 5rem;
+            animation: latido 1.5s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes latido {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .entrada-box {
+            background: rgba(255, 255, 255, 0.75);
+            padding: 45px 30px;
+            border-radius: 30px;
+            box-shadow: 0 15px 50px rgba(184, 76, 111, 0.15);
+            backdrop-filter: blur(8px);
+        }
+
+        .entrada-box input {
+            width: min(100%, 450px);
+            padding: 16px 20px;
+            border: 2px solid #e8a9bb;
+            border-radius: 50px;
+            outline: none;
+            font-size: 1.1rem;
+            text-align: center;
+            font-family: Georgia, serif;
+            margin: 15px 0;
+            background: white;
+        }
+
+        .entrada-box input:focus {
+            border-color: #b84c6f;
+        }
+
+        button {
+            border: none;
+            background: #b84c6f;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-family: Georgia, serif;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #a63e60;
+        }
+
+        #error {
+            margin-top: 15px;
+            color: #b84c6f;
+            display: none;
+        }
+
+        /* =========================
+           HISTORIA
+        ========================= */
+
+        .historia {
+            background: #fff5f7;
+        }
+
+        .foto-container {
+            margin: 35px auto;
+            width: min(100%, 650px);
+        }
+
+        .foto-container img {
+            width: 100%;
+            max-height: 700px;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(90, 40, 55, 0.18);
+            display: block;
+        }
+
+        .frase {
+            font-style: italic;
+            color: #754554;
+        }
+
+        /* =========================
+           SEPARADORES
+        ========================= */
+
+        .separador {
+            min-height: 55vh;
+            background: linear-gradient(
+                135deg,
+                #ffe1e9,
+                #fff5f7
+            );
+        }
+
+        .separador h2 {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* =========================
+           DECLARACIÓN
+        ========================= */
+
+        .declaracion {
+            background: #fff;
+        }
+
+        .carta {
+            background: #fff5f7;
+            border-radius: 30px;
+            padding: 45px 30px;
+            box-shadow: 0 15px 45px rgba(90, 40, 55, 0.12);
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* =========================
+           CONTADOR
+        ========================= */
+
+        .contador-section {
+            background: linear-gradient(
+                135deg,
+                #fff0f4,
+                #ffe0e8
+            );
+        }
+
+        .contador {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .tiempo {
+            background: white;
+            padding: 20px;
+            min-width: 110px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(90, 40, 55, 0.1);
+        }
+
+        .tiempo span {
+            display: block;
+            font-size: 2rem;
+            color: #b84c6f;
+            font-weight: bold;
+        }
+
+        .tiempo small {
+            color: #76505b;
+        }
+
+        /* =========================
+           PREGUNTA FINAL
+        ========================= */
+
+        .final {
+            background:
+                radial-gradient(circle at center, #ffe0e8, #fff5f7 70%);
+        }
+
+        .final h1 {
+            font-size: clamp(2.3rem, 7vw, 4.5rem);
+        }
+
+        .pregunta {
+            font-size: clamp(2rem, 6vw, 4rem);
+            color: #b84c6f;
+            font-weight: bold;
+            margin: 35px auto;
+            line-height: 1.3;
+        }
+
+        .corazones-finales {
+            font-size: 3rem;
+            margin-top: 30px;
+            animation: flotar 2s infinite ease-in-out;
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* =========================
+           BOTÓN MÚSICA
+        ========================= */
+
+        #musicaBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 55px;
+            height: 55px;
+            padding: 0;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        /* =========================
+           CORAZONES FLOTANDO
+        ========================= */
+
+        .corazon {
+            position: fixed;
+            bottom: -30px;
+            pointer-events: none;
+            animation: subir linear forwards;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        @keyframes subir {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           ANIMACIÓN SCROLL
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 60px 15px;
+            }
+
+            .entrada-box {
+                padding: 35px 20px;
+            }
+
+            .foto-container img {
+                border-radius: 18px;
+            }
+
+            .contador {
+                gap: 10px;
+            }
+
+            .tiempo {
+                min-width: 90px;
+                padding: 15px 10px;
+            }
+
+            .tiempo span {
+                font-size: 1.5rem;
+            }
+
+            .carta {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         MÚSICA
+    ========================= -->
+
+    <audio id="musica" loop>
+        <source src="./un-beso.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicaBtn" onclick="toggleMusica()">🎵</button>
+
+
+    <!-- =========================
+         ENTRADA
+    ========================= -->
+
+    <section id="entrada">
+
+        <div class="contenido entrada-box reveal">
+
+            <div class="corazon-grande">
+                ❤️
+            </div>
+
+            <h1>Antes de comenzar...</h1>
+
+            <p>
+                Hay una historia que alguien preparó especialmente
+                para usted.
+            </p>
+
+            <p>
+                Pero primero necesito saber si realmente es usted...
+            </p>
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Escriba su nombre completo"
+                autocomplete="off"
+            >
+
+            <br>
+
+            <button onclick="entrar()">
+                Entrar ❤️
+            </button>
+
+            <p id="error">
+                Mmm... parece que ese no es el nombre que estoy buscando 👀
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         INTRODUCCIÓN
+    ========================= -->
+
+    <section class="historia">
+
+        <div class="contenido reveal">
+
+            <h2>Sabía que era usted. ❤️</h2>
+
+            <p>
+                Hay una historia que preparé especialmente para usted,
+                con algunos de los momentos, recuerdos y sentimientos
+                que han significado muchísimo para mí.
+            </p>
+
+            <p>
+                Quizás algunas cosas sean difíciles de decir en persona,
+                así que decidí intentar contárselas de una forma
+                un poquito diferente.
+            </p>
+
+            <p class="frase">
+                Así que tómese un momento y acompáñeme hasta el final.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOTO 1
+    ========================= -->
+
+    <section class="historia">
+
+        <div class="contenido reveal">
+
+            <h2>Todo comenzó de a poquito...</h2>
+
+            <div class="foto-container">
+                <img src="./fotos/foto1.jpeg" alt="Nuestro recuerdo">
+            </div>
+
+            <p>
+                Si pudiera volver al comienzo de todo, creo que volvería
+                a elegir cada uno de esos momentos que me fueron
+                acercando a usted.
+            </p>
+
+            <p>
+                Porque sin darme cuenta, empezó a convertirse en alguien
+                demasiado importante para mí.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOTO 2
+    ========================= -->
+
+    <section class="historia">
+
+        <div class="contenido reveal">
+
+            <div class="foto-container">
+                <img src="./fotos/foto2.jpeg" alt="Nuestro recuerdo">
+            </div>
+
+            <p>
+                Al principio quizás ninguno de los dos imaginaba todo
+                lo que iba a pasar.
+            </p>
+
+            <p>
+                Y ahora, cuando miro hacia atrás, me cuesta creer cuánto
+                hemos vivido y cuánto ha llegado a significar usted para mí.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOTO 3
+    ========================= -->
+
+    <section class="historia">
+
+        <div class="contenido reveal">
+
+            <div class="foto-container">
+                <img src="./fotos/foto3.jpeg" alt="Nuestro recuerdo">
+            </div>
+
+            <p>
+                Me encantan esos momentos que quizás parecen pequeños,
+                pero que para mí significan muchísimo.
+            </p>
+
+            <p>
+                Hablar con usted, reírnos por cualquier tontera o
+                simplemente compartir un rato.
+            </p>
+
+            <p>
+                Con usted, hasta lo más sencillo se siente especial.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SEPARADOR
+    ========================= -->
+
+    <section class="separador">
+
+        <div class="contenido reveal">
+
+            <h2>
+                Y creo que ahí me di cuenta de algo...
+            </h2>
+
+            <p>
+                No era solamente que me gustara estar con usted.
+            </p>
+
+            <p>
+                Era que cada vez quería compartir más cosas,
+                más momentos y más recuerdos.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOTO 4
+    ========================= -->
+
+    <section class="historia">
+
+        <div class="contenido reveal">
+
+            <h2>Recuerdos que quedan</h2>
+
+            <div class="foto-container">
+                <img src="./fotos/foto4.jpeg" alt="Nuestro recuerdo">
+            </div>
+
+            <p>
+                Hay recuerdos que probablemente nunca voy a olvidar.
+            </p>
+
+            <p>
+                Y lo bonito es que muchos de ellos tienen algo en común:
+                usted está en ellos.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOTO 5
+    ========================= -->
+
+    <section class="historia">
+
+        <div class="contenido reveal">
+
+            <div class="foto-container">
+                <img src="./fotos/foto5.jpeg" alt="Nuestro recuerdo">
+            </div>
+
+            <p>
+                Gracias por cada conversación, cada risa, cada momento
+                y hasta por esas pequeñas cosas que quizás usted
+                ni siquiera recuerda.
+            </p>
+
+            <p>
+                Yo sí las recuerdo, porque vienen de una persona
+                que significa muchísimo para mí.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DECLARACIÓN
+    ========================= -->
+
+    <section class="declaracion">
+
+        <div class="contenido reveal">
+
+            <div class="carta">
+
+                <h2>Quiero decirle algo...</h2>
+
+                <p>
+                    No sé exactamente en qué momento pasó, pero poco a poco
+                    usted se fue convirtiendo en alguien que ocupa un lugar
+                    enorme en mi vida.
+                </p>
+
+                <p>
+                    Me encanta su forma de ser, su manera de hacerme reír
+                    y simplemente la sensación de saber que usted está ahí.
+                </p>
+
+                <p>
+                    Y si pudiera elegir nuevamente a alguien con quien
+                    compartir todo esto, volvería a elegirla a usted.
+                </p>
+
+                <p>
+                    ❤️
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOTO 6
+    ========================= -->
+
+    <section class="historia">
+
+        <div class="contenido reveal">
+
+            <div class="foto-container">
+                <img src="./fotos/foto6.jpeg" alt="Nuestro recuerdo">
+            </div>
+
+            <p>
+                A veces pienso en todo lo que ha pasado desde que usted
+                llegó a mi vida y me da mucha ternura.
+            </p>
+
+            <p>
+                Porque empezamos con una historia que ninguno de los dos
+                sabía hasta dónde iba a llegar.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOTO 7
+    ========================= -->
+
+    <section class="historia">
+
+        <div class="contenido reveal">
+
+            <div class="foto-container">
+                <img src="./fotos/foto7.jpeg" alt="Nuestro recuerdo">
+            </div>
+
+            <p>
+                Y todavía quiero que nos queden muchísimas fotos por sacar,
+                muchísimos lugares por conocer, muchísimas conversaciones
+                por tener y demasiadas tonteras por hacer juntos.
+            </p>
+
+            <p>
+                ❤️
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOTO 8
+    ========================= -->
+
+    <section class="historia">
+
+        <div class="contenido reveal">
+
+            <div class="foto-container">
+                <img src="./fotos/foto8.jpeg" alt="Nuestro recuerdo">
+            </div>
+
+            <p>
+                No quiero que esto sea solamente un recuerdo bonito.
+            </p>
+
+            <p>
+                Quiero que sea el comienzo de muchísimos recuerdos más.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTADOR
+    ========================= -->
+
+    <section class="contador-section">
+
+        <div class="contenido reveal">
+
+            <h2>Y mientras tanto...</h2>
+
+            <p>
+                Desde aquel momento ha pasado todo este tiempo,
+                y todavía siento que fue ayer cuando comenzó todo.
+            </p>
+
+            <p>
+                Espero que este contador algún día tenga que contar
+                muchísimo, muchísimo más.
+            </p>
+
+            <div class="contador">
+
+                <div class="tiempo">
+                    <span id="dias">0</span>
+                    <small>Días</small>
+                </div>
+
+                <div class="tiempo">
+                    <span id="horas">0</span>
+                    <small>Horas</small>
+                </div>
+
+                <div class="tiempo">
+                    <span id="minutos">0</span>
+                    <small>Minutos</small>
+                </div>
+
+                <div class="tiempo">
+                    <span id="segundos">0</span>
+                    <small>Segundos</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOTO 9
+    ========================= -->
+
+    <section class="historia">
+
+        <div class="contenido reveal">
+
+            <div class="foto-container">
+                <img src="./fotos/foto9.jpeg" alt="Nuestro recuerdo">
+            </div>
+
+            <p>
+                Si llegó hasta aquí, probablemente ya sepa que todo esto
+                no lo hice porque sí.
+            </p>
+
+            <p>
+                Cada palabra, cada foto y cada pequeño detalle
+                tiene una razón.
+            </p>
+
+            <h2>Usted. ❤️</h2>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOTO 10
+    ========================= -->
+
+    <section class="historia">
+
+        <div class="contenido reveal">
+
+            <div class="foto-container">
+                <img src="./fotos/foto10.jpeg" alt="Nuestro recuerdo">
+            </div>
+
+            <p>
+                Y después de tanto tiempo pensando en cómo decirle
+                todo esto, creo que ya no quiero seguir esperando
+                el momento perfecto.
+            </p>
+
+            <p>
+                Porque quizás el momento perfecto no existe.
+            </p>
+
+            <p>
+                Quizás simplemente existe el momento en que uno
+                se atreve a decir lo que siente.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ANTES DE LA PREGUNTA
+    ========================= -->
+
+    <section class="declaracion">
+
+        <div class="contenido reveal">
+
+            <div class="carta">
+
+                <h2>Y ahora sí...</h2>
+
+                <p>
+                    Sofía, quiero que sepa que la quiero muchísimo.
+                </p>
+
+                <p>
+                    Todo esto no alcanza para explicar todo lo que siento
+                    por usted, pero es mi pequeña forma de demostrárselo.
+                </p>
+
+                <p>
+                    Llevo mucho tiempo queriendo preguntarle algo...
+                </p>
+
+                <p>
+                    Así que solo me queda una cosa por decir.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PREGUNTA FINAL
+    ========================= -->
+
+    <section class="final">
+
+        <div class="contenido reveal">
+
+            <div class="corazon-grande">
+                ❤️
+            </div>
+
+            <h1>Después de todo esto...</h1>
+
+            <div class="pregunta">
+                Sofía, ¿Puedo ser tu pololo? 💘
+            </div>
+
+            <div class="corazones-finales">
+                ❤️ 💗 ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        /* =========================
+           NOMBRE DE ENTRADA
+        ========================= */
+
+        const nombreCorrecto = "Sofía Del Pilar Astete Soto";
+
+        function entrar() {
+
+            const input = document
+                .getElementById("nombre")
+                .value
+                .trim();
+
+            const error = document.getElementById("error");
+
+            if (
+                input.toLowerCase() ===
+                nombreCorrecto.toLowerCase()
+            ) {
+
+                error.style.display = "none";
+
+                const musica = document.getElementById("musica");
+
+                musica.play().catch(() => {});
+
+                document
+                    .getElementById("entrada")
+                    .style.display = "none";
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            } else {
+
+                error.style.display = "block";
+
+            }
+        }
+
+
+        /* =========================
+           ENTER EN EL NOMBRE
+        ========================= */
+
+        document
+            .getElementById("nombre")
+            .addEventListener("keydown", function(event) {
+
+                if (event.key === "Enter") {
+                    entrar();
+                }
+
+            });
+
+
+        /* =========================
+           MÚSICA
+        ========================= */
+
+        let musicaEncendida = true;
+
+        function toggleMusica() {
+
+            const musica = document.getElementById("musica");
+            const boton = document.getElementById("musicaBtn");
+
+            if (musica.paused) {
+
+                musica.play();
+                boton.textContent = "🎵";
+                musicaEncendida = true;
+
+            } else {
+
+                musica.pause();
+                boton.textContent = "🔇";
+                musicaEncendida = false;
+
+            }
+        }
+
+
+        /* =========================
+           CONTADOR
+        ========================= */
+
+        const fechaInicio =
+            new Date("2025-09-19T00:09:00");
+
+        function actualizarContador() {
+
+            const ahora = new Date();
+
+            let diferencia =
+                ahora.getTime() - fechaInicio.getTime();
+
+            if (diferencia < 0) {
+                diferencia = 0;
+            }
+
+            const segundosTotales =
+                Math.floor(diferencia / 1000);
+
+            const dias =
+                Math.floor(segundosTotales / 86400);
+
+            const horas =
+                Math.floor(
+                    (segundosTotales % 86400) / 3600
+                );
+
+            const minutos =
+                Math.floor(
+                    (segundosTotales % 3600) / 60
+                );
+
+            const segundos =
+                segundosTotales % 60;
+
+            document.getElementById("dias").textContent =
+                dias;
+
+            document.getElementById("horas").textContent =
+                horas;
+
+            document.getElementById("minutos").textContent =
+                minutos;
+
+            document.getElementById("segundos").textContent =
+                segundos;
+        }
+
+        actualizarContador();
+
+        setInterval(actualizarContador, 1000);
+
+
+        /* =========================
+           ANIMACIÓN AL HACER SCROLL
+        ========================= */
+
+        const elementos =
+            document.querySelectorAll(".reveal");
+
+        const observer =
+            new IntersectionObserver(
+
+                function(entries) {
+
+                    entries.forEach(function(entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target
+                                .classList
+                                .add("visible");
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+        elementos.forEach(function(elemento) {
+            observer.observe(elemento);
+        });
+
+
+        /* =========================
+           CORAZONES FLOTANTES
+        ========================= */
+
+        function crearCorazon() {
+
+            const corazon =
+                document.createElement("div");
+
+            corazon.classList.add("corazon");
+
+            const corazones = [
+                "❤️",
+                "💕",
+                "💗",
+                "💖",
+                "💘"
+            ];
+
+            corazon.textContent =
+                corazones[
+                    Math.floor(
+                        Math.random() * corazones.length
+                    )
+                ];
+
+            corazon.style.left =
+                Math.random() * 100 + "vw";
+
+            corazon.style.fontSize =
+                (Math.random() * 15 + 12) + "px";
+
+            corazon.style.animationDuration =
+                (Math.random() * 5 + 6) + "s";
+
+            document.body.appendChild(corazon);
+
+            setTimeout(function() {
+                corazon.remove();
+            }, 12000);
+        }
+
+        setInterval(crearCorazon, 1200);
+
+    </script>
+
+</body>
+</html>
